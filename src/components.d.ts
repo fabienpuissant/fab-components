@@ -6,56 +6,80 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
+    interface FabButton {
         /**
-          * The first name
+          * Disabled
          */
-        "first": string;
+        "disabled": boolean;
         /**
-          * The last name
+          * Height string property that will be passed in the width css property
          */
-        "last": string;
+        "height": string;
         /**
-          * The middle name
+          * The label of the button
          */
-        "middle": string;
+        "label": string;
+        /**
+          * Primary style
+         */
+        "primary": boolean;
+        /**
+          * Rounded style
+         */
+        "rounded": 'small' | 'medium' | 'large';
+        /**
+          * Width string property that will be passed in the width css property
+         */
+        "width": string;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLFabButtonElement extends Components.FabButton, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLFabButtonElement: {
+        prototype: HTMLFabButtonElement;
+        new (): HTMLFabButtonElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "fab-button": HTMLFabButtonElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
+    interface FabButton {
         /**
-          * The first name
+          * Disabled
          */
-        "first"?: string;
+        "disabled"?: boolean;
         /**
-          * The last name
+          * Height string property that will be passed in the width css property
          */
-        "last"?: string;
+        "height"?: string;
         /**
-          * The middle name
+          * The label of the button
          */
-        "middle"?: string;
+        "label"?: string;
+        /**
+          * Primary style
+         */
+        "primary"?: boolean;
+        /**
+          * Rounded style
+         */
+        "rounded"?: 'small' | 'medium' | 'large';
+        /**
+          * Width string property that will be passed in the width css property
+         */
+        "width"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "fab-button": FabButton;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "fab-button": LocalJSX.FabButton & JSXBase.HTMLAttributes<HTMLFabButtonElement>;
         }
     }
 }

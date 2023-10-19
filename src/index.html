@@ -9,6 +9,11 @@
     <script nomodule src="/build/stencil-components.js"></script>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <fab-button label="button" primary rounded="l" id="button" width="10rem">Button</fab-button>
   </body>
+
+  <script>
+    const button = document.querySelector('#button');
+    button.addEventListener('click', () => console.log('okok'));
+  </script>
 </html>
