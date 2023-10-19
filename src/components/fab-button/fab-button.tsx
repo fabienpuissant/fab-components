@@ -2,7 +2,7 @@ import { Component, Prop, State, h, Element, Watch } from '@stencil/core';
 
 @Component({
   tag: 'fab-button',
-  styleUrls: ['fab-button.scss', '../../global.font.scss'],
+  styleUrls: ['fab-button.scss'],
   shadow: true,
 })
 export class FabButton {
@@ -35,6 +35,11 @@ export class FabButton {
    * Height string property that will be passed in the width css property
    */
   @Prop() height: string;
+
+  /**
+   * Font size in the button css property
+   */
+  @Prop() fontSize: string;
 
   @State() classMap: Record<string, boolean>;
 
@@ -70,6 +75,9 @@ export class FabButton {
     }
     if (this.height) {
       style['height'] = this.height;
+    }
+    if (this.fontSize) {
+      style['font-size'] = this.fontSize;
     }
     this.style = style;
   }

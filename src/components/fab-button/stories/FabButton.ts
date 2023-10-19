@@ -5,10 +5,11 @@ export interface ElementProps {
   rounded: string;
   width: string;
   height: string;
+  fontSize: string;
   click: () => void;
 }
 
-export const createElement = ({ label, primary, disabled, rounded, width, height, click }: ElementProps) => {
+export const createElement = ({ label, primary, disabled, rounded, width, height, fontSize, click }: ElementProps) => {
   const btn = document.createElement('fab-button');
   btn.setAttribute('label', label);
   btn.setAttribute('rounded', rounded);
@@ -16,6 +17,7 @@ export const createElement = ({ label, primary, disabled, rounded, width, height
   btn.setAttribute('disabled', `${disabled}`);
   btn.setAttribute('height', height);
   btn.setAttribute('width', width);
+  btn.setAttribute('font-size', fontSize);
   if (!disabled) {
     btn.addEventListener('click', click);
   }

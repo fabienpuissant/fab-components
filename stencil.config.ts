@@ -17,14 +17,16 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null, // disable service workers
+      copy: [{ src: 'components/assets', dest: 'assets' }],
     },
   ],
+
   testing: {
     browserHeadless: 'new',
   },
   plugins: [
     sass({
-      injectGlobalPaths: ['src/global/variables.scss', 'src/global/font.scss'],
+      injectGlobalPaths: ['src/components/assets/variables.scss'],
     }),
   ],
 };

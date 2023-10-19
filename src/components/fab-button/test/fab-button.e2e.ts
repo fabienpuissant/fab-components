@@ -55,4 +55,12 @@ describe('fab-button', () => {
     const element = await page.find('fab-button >>> button');
     expect((await element.getComputedStyle()).height).toEqual('100px');
   });
+
+  it('renders with font-size props', async () => {
+    const page = await newE2EPage();
+
+    await page.setContent('<fab-button font-size="10px"></fab-button>');
+    const element = await page.find('fab-button >>> button');
+    expect((await element.getComputedStyle()).fontSize).toEqual('10px');
+  });
 });

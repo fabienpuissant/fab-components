@@ -12,6 +12,10 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * Font size in the button css property
+         */
+        "fontSize": string;
+        /**
           * Height string property that will be passed in the width css property
          */
         "height": string;
@@ -50,6 +54,10 @@ declare namespace LocalJSX {
           * Disabled
          */
         "disabled"?: boolean;
+        /**
+          * Font size in the button css property
+         */
+        "fontSize"?: string;
         /**
           * Height string property that will be passed in the width css property
          */

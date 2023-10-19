@@ -4,8 +4,8 @@ import { createElement } from './FabButton.js';
 export default {
   title: 'Components/Button',
   tags: ['autodocs'],
-  render: ({ label, primary, disabled, rounded, height, width, click }) => {
-    return createElement({ label, primary, disabled, rounded, height, width, click });
+  render: ({ label, primary, disabled, rounded, height, width, fontSize, click }) => {
+    return createElement({ label, primary, disabled, rounded, height, width, fontSize, click });
   },
   argTypes: {
     label: { control: 'text' },
@@ -30,5 +30,6 @@ export const Button = {
     rounded: 'medium',
     width: '150px',
     height: '50px',
+    fontSize: '20px',
   },
 };
